@@ -1,17 +1,20 @@
-<html>
-    <head>
-        <title>Contato</title>
-    </head>
-    <body>
-        <h1>Yuri Alves Lima,</h1> 
-        <h2>yurisoad2015@gmail.com,</h3>
-        <h3>11953879046</h3>
-        <a href="https://www.github.com/yurialvesL"> Meu git hub</a>
-        <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-        </ul>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block title%}Pagina inicial{% endblock%}
+{%block content%}
+    {% for post in posts %}
+        <article class="post">
+            <header>
+                <div>
+                    <h1>{{ post.title }}</h1>
+                    <div class="about">by {{ post.author }} on {{post.created.strftime('%d/%m/%Y')}}</div>
+                </div>
+            </header>
+            <p class="body">{{ post.body }}</p>
+        </article>
+        {% if not loop.last %}
+            <hr>
+        {% else %}
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+       
