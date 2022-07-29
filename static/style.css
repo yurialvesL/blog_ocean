@@ -48,3 +48,22 @@ hr{
 
 
 }
+
+.content form{
+    margin:1em auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+    
+}
+
+.content label {
+    font-weight: bold;
+    margin-top: 0.8em;
+
+}
+
+.content input{
+    margin-bottom: 1em;
+   
+}
